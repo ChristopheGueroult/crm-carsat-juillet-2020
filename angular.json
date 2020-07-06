@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "crm-carsat-juillet"
+    }
+  },
+  "defaultProject": "crm-carsat-juillet",
+  "cli": {
+    "analytics": "8891072b-80d2-4bc2-852c-6459eee1d10c"
+  }
 }
