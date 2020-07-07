@@ -1,0 +1,19 @@
+@import 'fonts';
+@import 'theme';
+
+h1 {
+  font-size: $h1-fz;
+  color: $color3;
+}
+h2 {
+  font-size: $h2-fz;
+  color: $color3;
+}
+h3 {
+  font-size: $h3-fz;
+  color: $color3;
+}
+p, a, span, li {
+  font-size: $regular-fz;
+  color: $dark-color
+}
