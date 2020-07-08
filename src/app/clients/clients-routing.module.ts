@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PageClientsComponent } from './pages/page-clients/page-clients.component';
 
 const routes: Routes = [
-  { path: '', component: PageNotFoundComponent },
+  { path: '', component: PageClientsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class PageNotFoundModule { }
+export class ClientsRoutingModule { }
