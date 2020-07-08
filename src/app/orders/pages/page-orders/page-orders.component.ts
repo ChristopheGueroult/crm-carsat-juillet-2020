@@ -10,6 +10,7 @@ import { Order } from 'src/app/shared/models/order';
 export class PageOrdersComponent implements OnInit {
   public collection: Order[];
   public title: string;
+  color = 'white';
   constructor(private os: OrdersService) { }
 
   ngOnInit(): void {
