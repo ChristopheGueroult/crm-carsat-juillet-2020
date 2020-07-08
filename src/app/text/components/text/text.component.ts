@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
   selector: 'app-text',
@@ -7,10 +7,12 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class TextComponent implements OnInit {
-
-  constructor() { }
+  @Input() color: string;
+  constructor() {
+  }
 
   ngOnInit(): void {
+    // console.log(this.colorWhite);
   }
 
 }

@@ -19,3 +19,20 @@ app-text {
     color: $dark-color
   }
 }
+// colors
+app-text {
+  .white {
+    h1 {
+      color: $light-color;
+    }
+    h2 {
+      color: $light-color;
+    }
+    h3 {
+      color: $light-color;
+    }
+    p, a, span, li {
+      color: $light-color
+    }
+  }
+}
