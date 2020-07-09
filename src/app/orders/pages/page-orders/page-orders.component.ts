@@ -40,8 +40,13 @@ export class PageOrdersComponent implements OnInit, OnDestroy {
     // console.log(item);
     // console.log(event.target.value);
     this.os.changeState(item, event.target.value).subscribe((res) => {
-      console.log(res);
+      item.state = res.state;
     });
+  }
+
+  public action() {
+    console.log('btn clicked');
+
   }
 
   ngOnDestroy() {

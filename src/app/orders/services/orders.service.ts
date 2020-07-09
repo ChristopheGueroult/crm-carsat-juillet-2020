@@ -28,8 +28,10 @@ export class OrdersService {
 
   // change state of item
   public changeState(item: Order, state: StateOrder): Observable<Order> {
-    item.state = state;
-    return this.updateItem(item);
+    // item.state = state;
+    const obj = {...item};
+    obj.state = state;
+    return this.updateItem(obj);
   }
 
   // update item in collecion

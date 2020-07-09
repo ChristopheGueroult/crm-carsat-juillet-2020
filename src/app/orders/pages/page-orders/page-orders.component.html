@@ -5,7 +5,7 @@
   </app-text>
 
 
-  <p class="content-page">
+  <ng-container class="content-page">
     <!-- {{ collection | json }} -->
     <app-table-light *ngIf="collection$ | async as collection" [headers]="headers">
 
@@ -24,6 +24,11 @@
       </tr>
 
     </app-table-light>
-  </p>
+
+    <app-btn route="add" label="Add an order"></app-btn>
+    <app-btn href="https://www.google.fr" label="Go to google"></app-btn>
+    <app-btn [action]="true" label="action" (clicked)="action()"></app-btn>
+
+  </ng-container>
 
 </app-template-one-col>
