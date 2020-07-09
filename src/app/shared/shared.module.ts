@@ -4,11 +4,12 @@ import { TemplatesModule } from '../templates/templates.module';
 import { TextModule } from '../text/text.module';
 import { LibraryModule } from '../library/library.module';
 import { TotalPipe } from './pipes/total.pipe';
+import { StateDirective } from './directives/state.directive';
 
 
 
 @NgModule({
-  declarations: [TotalPipe],
+  declarations: [TotalPipe, StateDirective],
   imports: [
     CommonModule,
   ],
@@ -16,7 +17,8 @@ import { TotalPipe } from './pipes/total.pipe';
     TemplatesModule,
     TextModule,
     LibraryModule,
-    TotalPipe
+    TotalPipe,
+    StateDirective
   ]
 })
 export class SharedModule { }
