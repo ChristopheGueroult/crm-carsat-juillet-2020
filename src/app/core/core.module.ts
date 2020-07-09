@@ -15,10 +15,7 @@ import { NavComponent } from './components/nav/nav.component';
   declarations: [HeaderComponent, NavComponent, FooterComponent],
   imports: [
     CommonModule,
-    LoginModule,
     TextModule,
-    UiModule,
-    IconsModule,
     RouterModule
   ],
   exports: [

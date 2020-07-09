@@ -10,14 +10,23 @@ import { Order } from 'src/app/shared/models/order';
 export class PageOrdersComponent implements OnInit {
   public collection: Order[];
   public title: string;
+  public headers: string[];
   color = 'white';
   constructor(private os: OrdersService) { }
 
   ngOnInit(): void {
+    this.headers = [
+      'Type',
+      'Client',
+      'Nb Jours',
+      'Tjm HT',
+      'Total HT',
+      'Total TTC',
+      'State',
+    ];
     this.title = 'Orders List';
     this.os.collection.subscribe((datas) => {
       this.collection = datas;
-      console.log(this.collection);
     });
   }
 
