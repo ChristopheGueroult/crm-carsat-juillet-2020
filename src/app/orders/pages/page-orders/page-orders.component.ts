@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OrdersService } from '../../services/orders.service';
 import { Order } from 'src/app/shared/models/order';
-import { Subscription, Observable } from 'rxjs';
+import { Subscription, Observable, Subject } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-page-orders',
@@ -11,16 +12,17 @@ import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 })
 export class PageOrdersComponent implements OnInit, OnDestroy {
   // public collection: Order[];
-  public collection$: Observable<Order[]>;
+  public collection$: Subject<Order[]> = new Subject();
   public title: string;
   public headers: string[];
   color = 'white';
   public states = Object.values(StateOrder);
   // private sub: Subscription;
-  constructor(private os: OrdersService) { }
+  constructor(private os: OrdersService, private router: Router) { }
 
   ngOnInit(): void {
     this.headers = [
+      'Action',
       'Type',
       'Client',
       'Nb Jours',
@@ -30,10 +32,10 @@ export class PageOrdersComponent implements OnInit, OnDestroy {
       'State',
     ];
     this.title = 'Orders List';
-    this.collection$ = this.os.collection;
-    // this.sub = this.os.collection.subscribe((datas) => {
-    //   this.collection = datas;
-    // });
+    // this.collection$ = this.os.collection;
+    this.os.collection.subscribe((datas) => {
+      this.collection$.next(datas);
+    });
   }
 
   public changeState(item: Order, event) {
@@ -47,6 +49,18 @@ export class PageOrdersComponent implements OnInit, OnDestroy {
   public action() {
     console.log('btn clicked');
 
+  }
+
+  public edit(item: Order) {
+    this.router.navigate(['orders', 'edit', item.id]);
+  }
+  public delete(item: Order) {
+    this.os.deleteItem(item).subscribe((res) => {
+      // rafraichir collection
+      this.os.collection.subscribe((datas) => {
+        this.collection$.next(datas);
+      });
+    });
   }
 
   ngOnDestroy() {

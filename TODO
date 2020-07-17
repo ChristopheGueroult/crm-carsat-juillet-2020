@@ -12,4 +12,21 @@
 ☐ docusign
 
 ☐ tp edit order
+  ✔ orders component ts ajouter dans headers[] le nom de la colone action @done(20-07-10 14:31)
+  ✔ orders component html ajouter un td avec icon edit @done(20-07-10 14:34)
+  ✔ au click sur l'icon edit on appel une fontion edit(item) @done(20-07-10 14:34)
+  ✔ dans le ts on créé la fonction edit(item) qui redirige vers la route orders/edit/1 @done(20-07-10 14:34)
+  ✔ créer le component page-edit @done(20-07-10 14:49)
+  ✔ dans orders routing module : créer une route edit/:id (qui prend un id dans l'url) @done(20-07-10 14:49)
+  ✔ sur page edit component.ts : @done(20-07-10 14:49)
+    ☐ récupérer l'id dans l'url
+    ☐ appeler la méthode getItemById(id) de ordersService
+    ☐ faire le subscribe pour récupérer dans le subscribe l'item qui est retourné par l'api
+    ☐ dans page edit component html
+      ☐ utilise un template component
+      ☐ utilise form order component
+      ☐ on bing l'item récupéré avec FormOrderComponent.initItem (@Input())
+    ☐ dans page edit component html utiliser l'@Output() clickek que l'on bing avec une fonction edit($event)
+    ☐ dans page edit component ts on crée la fonction edit(item: Order) et qui utilise this.os.update(item).subscribe()
+    ☐ dans le subscribe() on récupère la réponse de l'api et on fait une redirection vers la route 'orders
 
